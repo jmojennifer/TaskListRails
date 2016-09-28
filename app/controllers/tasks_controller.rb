@@ -53,6 +53,8 @@ class TasksController < ApplicationController
     @task = all_tasks[params[:id].to_i - 1]
   end
 
+  def new; end
+
   def create
   end
 
