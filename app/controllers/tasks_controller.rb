@@ -34,15 +34,15 @@ class TasksController < ApplicationController
         completion_status: "Pending",
         completion_date: nil,
         id: 1
-      },
-      {
+        },
+        {
         name: "Homework",
         description: "Do readings and play with zombies",
         completion_status: "Pending",
         completion_date: nil,
         id: 2
-      },
-      {
+        },
+        {
         name: "Rest",
         description: "Get some ZZZs",
         completion_status: "Complete",
@@ -50,6 +50,10 @@ class TasksController < ApplicationController
         id: 3
         }]
 
-        @task = all_tasks[params[:id].to_i - 1]
+    @task = all_tasks[params[:id].to_i - 1]
   end
+
+  def create
+  end
+
 end
