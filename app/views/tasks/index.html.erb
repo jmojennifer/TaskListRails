@@ -1,0 +1,8 @@
+<h1><%= @name %>'s Task List</h1>
+
+<h2>Tasks</h2>
+
+<% @all_tasks.each do |task| %>
+    <h3><%=link_to(task[:name], task_path(task[:id])) %></h3>
+    <br>
+<% end %>
