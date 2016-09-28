@@ -1,0 +1,26 @@
+<form action="/tasks" method="post" accept-charset="utf-8">
+  <!-- SPECIAL INPUT TO ALLOW RAILS TO USE THIS FORM -->
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+  <h1>Task Creator</h1>
+  <p><label for="name">Name: </label>
+  <input type="text" name="name" value="" id="name"></p>
+
+  <p><label for="description">Description: </label>
+  <input type="text" name="description" value="" id="description"></p>
+
+  <p><label for="completion_status">Completion Status: </label>
+  <p><select>
+     <option value="new">New</option>
+     <option value="pending">Pending</option>
+     <option value="completed">Completed</option>
+   </select>
+ </p>
+
+ <%# if option value="completed"%>
+  <!-- <p><label for="completion_date">Completion Date: </label></p>
+  <input type="text" name="completion_date" value="" id="completion_date"></p> -->
+<%# end %>
+
+  <input type="submit" value="Submit">
+</form>
