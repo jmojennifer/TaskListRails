@@ -46,7 +46,7 @@ class TasksController < ApplicationController
         name: "Rest",
         description: "Get some ZZZs",
         completion_status: "Complete",
-        completion_date: "9-26-2016",
+        completion_date: "2016-09-28",
         id: 3
         }]
 
