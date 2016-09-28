@@ -3,7 +3,7 @@
 <ul>
   <li>Description: <%= @task[:description] %></li>
     <li>Completion Status: <%= @task[:completion_status] %></li>
-    <% if @task[:completion_status] != "Complete" || @task[:completion_status] != "Completed" || @task[:completion_status] != "complete" || @task[:completion_status] != "completed"%>
+    <% if @task[:completion_status] == "Complete" || @task[:completion_status] == "Completed" || @task[:completion_status] == "complete" || @task[:completion_status] == "completed"%>
       <li>Completion Date: <%= @task[:completion_date] %>
     <% end %>
 </ul>
