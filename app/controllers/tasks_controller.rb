@@ -14,8 +14,13 @@ class TasksController < ApplicationController
   end
 
   def create
-    #insert task into array of hashes or db
-    redirect_to tasks_path
+    @task = Task.new(task_params)
+    @task.save
+    if @task.save
+      redirect_to tasks_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -24,3 +29,8 @@ class TasksController < ApplicationController
   end
 
 end
+
+private
+  def task_params
+    params.require(:task).permit(:name, :description, :completion_status, :completion_date)
+  end
