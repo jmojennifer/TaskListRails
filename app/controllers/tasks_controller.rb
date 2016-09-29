@@ -56,6 +56,7 @@ class TasksController < ApplicationController
   def new; end
 
   def create
+    redirect_to tasks_path
   end
 
 end
