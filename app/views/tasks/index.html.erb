@@ -1,9 +1,9 @@
-<h1><%= @name %>'s Task List</h1>
+<h1>Task List</h1>
 
 <h2>Tasks</h2>
 
-<% @all_tasks.each do |task| %>
-    <h3><%=link_to(task[:name], task_path(task[:id])) %> &nbsp &nbsp <%= link_to("➖", tasks_delete_path) %></h3>
+<% @tasks.each do |task| %>
+    <h3><%=link_to(task[:name], task_path(task[:id])) %> &nbsp &nbsp <%= link_to("➖", tasks_destroy_path) %></h3>
     <br>
 <% end %>
 

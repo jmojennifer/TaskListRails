@@ -1,9 +1,15 @@
-<form action="/tasks" method="delete" accept-charset="utf-8">
-  <!-- SPECIAL INPUT TO ALLOW RAILS TO USE THIS FORM -->
-  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+<%= form_for @task method: :destroy do |f| %>
+  <p><%= f.label :name %>
+  <%= f.text_field :name %></p>
 
-  <p>Are you sure you'd like to delete your <%# task[:name] %> task?<p>
-  <p>Press Submit to confirm</p>
+  <p><%= f.label :description %>
+  <%= f.text_field :description %></p>
 
-  <input type="submit" value="Submit">
-</form>
+  <p><%= f.label :completion_status, "Completion Status" %>
+  <%= f.select(:completion_status, options_for_select(@completion_status_options)) %></p>
+
+  <p><%= f.label :completion_date, "Completion Date (if applicable)" %>
+  <%= f.text_field :completion_date %></p>
+
+  <p><%= f.submit "Submit" %></p>
+<% end %>
