@@ -1,24 +1,15 @@
-<form action="/tasks" method="post" accept-charset="utf-8">
-  <!-- SPECIAL INPUT TO ALLOW RAILS TO USE THIS FORM -->
-  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+<%= form_for @task do |f| %>
+  <p><%= f.label :name %>
+  <%= f.text_field :name %></p>
 
-  <h1>Task Creator</h1>
-  <p><label for="name">Name: </label>
-  <input type="text" name="name" value="" id="name"></p>
+  <p><%= f.label :description %>
+  <%= f.text_field :description %></p>
 
-  <p><label for="description">Description: </label>
-  <input type="text" name="description" value="" id="description"></p>
+  <p><%= f.label :completion_status, "Completion Status" %>
+  <%= f.select(:completion_status, options_for_select(@completion_status_options)) %></p>
 
-  <p><label for="completion_status">Completion Status: </label>
-  <p><select>
-     <option value="new">New</option>
-     <option value="pending">Pending</option>
-     <option value="completed">Completed</option>
-   </select>
- </p>
- <!--Ideally this would be hidden unless Completed is selected, but I looked and it appears Javascript is required for this functionality.-->
-<label for="completion_date">Completion Date: </label></p>
-  <input type="text" name="completion_date" value="" id="completion_date"></p>
+  <p><%= f.label :completion_date, "Completion Date (if applicable)" %>
+  <%= f.text_field :completion_date %></p>
 
-  <input type="submit" value="Submit">
-</form>
+  <p><%= f.submit "Submit" %></p>
+<% end %>
