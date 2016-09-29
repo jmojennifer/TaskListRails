@@ -6,3 +6,5 @@
     <h3><%=link_to(task[:name], task_path(task[:id])) %></h3>
     <br>
 <% end %>
+
+<h4><%=link_to("Create a task", tasks_new_path) %></h4>
