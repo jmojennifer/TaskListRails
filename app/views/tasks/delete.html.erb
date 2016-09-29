@@ -1,0 +1,9 @@
+<form action="/tasks" method="delete" accept-charset="utf-8">
+  <!-- SPECIAL INPUT TO ALLOW RAILS TO USE THIS FORM -->
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+  <p>Are you sure you'd like to delete your <%# task[:name] %> task?<p>
+  <p>Press Submit to confirm</p>
+
+  <input type="submit" value="Submit">
+</form>
