@@ -3,8 +3,8 @@
 <h2>Tasks</h2>
 
 <% @all_tasks.each do |task| %>
-    <h3><%=link_to(task[:name], task_path(task[:id])) %></h3>
+    <h3><%=link_to(task[:name], task_path(task[:id])) %> &nbsp &nbsp <%= link_to("➖", tasks_delete_path) %></h3>
     <br>
 <% end %>
 
-<h4><%=link_to("Create a task", tasks_new_path) %></h4>
+<h4>__________ <%=link_to("➕", tasks_new_path) %></h4>
