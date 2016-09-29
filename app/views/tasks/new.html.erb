@@ -16,11 +16,9 @@
      <option value="completed">Completed</option>
    </select>
  </p>
-
- <%# if option value="completed"%>
-  <!-- <p><label for="completion_date">Completion Date: </label></p>
-  <input type="text" name="completion_date" value="" id="completion_date"></p> -->
-<%# end %>
+ <!--Ideally this would be hidden unless Completed is selected, but I looked and it appears Javascript is required for this functionality.-->
+<label for="completion_date">Completion Date: </label></p>
+  <input type="text" name="completion_date" value="" id="completion_date"></p>
 
   <input type="submit" value="Submit">
 </form>
