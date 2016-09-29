@@ -56,6 +56,12 @@ class TasksController < ApplicationController
   def new; end
 
   def create
+    #insert task into array of hashes or db
+    redirect_to tasks_path
+  end
+
+  def destroy
+    #delete task from array of hashes or db
     redirect_to tasks_path
   end
 
