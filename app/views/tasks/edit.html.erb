@@ -6,9 +6,11 @@
   <%= f.text_field :description %></p>
 
   <!-- TODO: How to get selection to stay if page is re-rendered -->
+
   <p><%= f.label :completion_status, "Completion Status" %>
   <%= f.select(:completion_status, options_for_select(@completion_status_options)) %></p>
 
+  <!-- TODO: Change Completion Date to nil if switching from Completed to any other Completion Status -->
   <p><%= f.label :completion_date, "Completion Date -- if applicable (YYYY-MM-DD)" %>
   <%= f.date_field :completion_date %></p>
 
