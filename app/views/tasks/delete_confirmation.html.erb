@@ -1,0 +1,5 @@
+<%= form_for @task, method: :delete do |f| %>
+  <p>Are you sure you want to delete your <%= @task[:name] %> task?</p>
+  <p>Pressing Submit will delete the task!</p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

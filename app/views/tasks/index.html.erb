@@ -3,7 +3,7 @@
 <h2>Tasks</h2>
 
 <% @tasks.each do |task| %>
-    <h3><%=link_to(task[:name], task_path(task[:id])) %> &nbsp &nbsp <%= link_to("➖", tasks_destroy_path) %></h3>
+    <h3><%=link_to(task[:name], task_path(task[:id])) %> &nbsp &nbsp <%= link_to("➖", task_delete_confirmation_path(task[:id])) %></h3>
     <br>
 <% end %>
 

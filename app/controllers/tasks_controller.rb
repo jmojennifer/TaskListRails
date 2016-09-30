@@ -15,7 +15,6 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.save
     if @task.save
       redirect_to tasks_path
     else
@@ -23,8 +22,13 @@ class TasksController < ApplicationController
     end
   end
 
+  def delete_confirmation
+    @task = Task.find(params[:id])
+  end
+
   def destroy
-    #delete task from array of hashes or db
+    @task = Task.find(params[:id])
+    @task.destroy
     redirect_to tasks_path
   end
 
