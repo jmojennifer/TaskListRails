@@ -36,10 +36,6 @@ class TasksController < ApplicationController
       end
   end
 
-  def delete_confirmation
-    @task = Task.find(params[:id])
-  end
-
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
