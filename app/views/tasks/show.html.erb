@@ -7,3 +7,5 @@
         <li>Completion Date: <%= @task[:completion_date] %></li>
       <% end %>
 </ul>
+
+<h4>Edit &nbsp <%= link_to("📝", task_edit_path(@task[:id])) %></h4>
