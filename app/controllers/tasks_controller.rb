@@ -22,6 +22,20 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+    @completion_status_options = ["New", "Pending", "Completed"]
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+      if @task.update(task_params)
+        redirect_to tasks_path
+      else
+        render :edit
+      end
+  end
+
   def delete_confirmation
     @task = Task.find(params[:id])
   end
