@@ -3,8 +3,8 @@
 <h2>Tasks</h2>
 
 <% @tasks.each do |task| %>
-    <h3><%=link_to(task[:name], task_path(task[:id])) %> &nbsp &nbsp <%= link_to("➖", task_delete_confirmation_path(task[:id])) %></h3>
-    <br>
+    <%=task[:name]%> &nbsp <%= link_to("Details", task_path(task[:id])) %> &nbsp <%= link_to("➖", task_delete_confirmation_path(task[:id])) %>
+    <hr>
 <% end %>
 
-<h4>__________ <%=link_to("➕", tasks_new_path) %></h4>
+<h4>Add a task: <%=link_to("➕", tasks_new_path) %></h4>
