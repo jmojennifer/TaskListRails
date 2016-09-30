@@ -8,9 +8,8 @@
   <p><%= f.label :completion_status, "Completion Status" %>
   <%= f.text_field :completion_status %></p>
 
-  <!-- TODO: Change Completion Date to nil if switching from Completed to any other Completion Status -->
-  <p><%= f.label :completion_date, "Completion Date -- if applicable (YYYY-MM-DD)" %>
-  <%= f.date_field :completion_date %></p>
+  <p><%= f.label :completion_date, "Completion Date/Time -- if applicable (YYYY-MM-DD)" %>
+  <%= f.text_field :completion_date %></p>
 
   <p><%= f.submit "Submit" %></p>
 <% end %>

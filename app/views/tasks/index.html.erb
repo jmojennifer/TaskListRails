@@ -3,10 +3,8 @@
 <h2>Tasks</h2>
 
 <% @tasks.each do |task| %>
-    <%=task[:name]%> &nbsp <%= link_to("Details", task_path(task[:id])) %> &nbsp <%= link_to("➖", task_path(task[:id]), method: :delete, data: { confirm: "Are you sure you want to destroy this task?"} )%>
-    <p>
-    complete task &nbsp <%= link_to("✔", task_path(task[:id]), method: :patch) %>
-    </p>
+    <%=task[:name]%> &nbsp <%= link_to("Details", task_path(task[:id])) %> &nbsp <%= link_to("➖", task_path(task[:id]), method: :delete, data: { confirm: "Are you sure you want to destroy this task?"} ) %>
+    <%= button_to("Complete Task", task_complete_path(task[:id]), method: :patch) %>
     <hr>
 <% end %>
 

@@ -28,6 +28,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
       if @task.update(task_params)
+        puts @task_params
         redirect_to tasks_path
       else
         render :edit
@@ -37,7 +38,7 @@ class TasksController < ApplicationController
   def complete
     @task = Task.find(params[:id])
     @task[:completion_status] = "Completed"
-    @task[:completion_date] = Date.today
+    @task[:completion_date] = DateTime.current
     @task.save
     redirect_to tasks_path
   end
