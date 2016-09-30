@@ -27,18 +27,16 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-      if @task.update(task_params)
-        puts @task_params
-        redirect_to tasks_path
-      else
-        render :edit
-      end
+    if @task.update(task_params)
+      redirect_to tasks_path
+    else
+      render :edit
+    end
   end
 
   def complete
     @task = Task.find(params[:id])
-    @task[:completion_status] = "Completed"
-    @task[:completion_date] = DateTime.current
+    @task.mark_complete
     @task.save
     redirect_to tasks_path
   end
@@ -52,6 +50,6 @@ class TasksController < ApplicationController
 end
 
 private
-  def task_params
-    params.require(:task).permit(:name, :description, :completion_status, :completion_date)
-  end
+def task_params
+  params.require(:task).permit(:name, :description, :completion_status, :completion_date)
+end
