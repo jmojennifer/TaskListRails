@@ -2,10 +2,12 @@
 
 <ul>
   <li>Description: <%= @task[:description] %></li>
-    <li>Completion Status: <%= @task[:completion_status] %></li>
-      <% if @task[:completion_status] == "Completed" %>
+  <li>Completion Status: <%= @task[:completion_status] %></li>
+    <% if @task[:completion_date] == nil %>
+        <li>Completion Date: <%= "N/A" %></li>
+    <% else %>
         <li>Completion Date: <%= @task[:completion_date] %></li>
-      <% end %>
+    <% end %>
 </ul>
 
 <h4>Edit &nbsp <%= link_to("📝", task_edit_path(@task[:id])) %></h4>

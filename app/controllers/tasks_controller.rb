@@ -9,7 +9,6 @@ class TasksController < ApplicationController
   end
 
   def new
-    @completion_status_options = ["New", "Pending", "Completed"]
     @task = Task.new
   end
 
@@ -23,7 +22,6 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @completion_status_options = ["New", "Pending", "Completed"]
     @task = Task.find(params[:id])
   end
 
