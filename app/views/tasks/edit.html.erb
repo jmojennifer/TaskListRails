@@ -8,9 +8,8 @@
   <p><%= f.label :completion_status, "Completion Status" %>
   <%= f.select(:completion_status, options_for_select(@completion_status_options)) %></p>
 
-  <p><%= f.label :completion_date, "Completion Date (if applicable)" %>
-  <%= f.date_field :completion_date.to_s %></p>
-  <!--Only possible to enter any date format above with .to_s-->
+  <p><%= f.label :completion_date, "Completion Date -- if applicable (YYYY-MM-DD)" %>
+  <%= f.date_field :completion_date %></p>
 
   <p><%= f.submit "Submit" %></p>
 <% end %>
