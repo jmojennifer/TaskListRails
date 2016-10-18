@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   # Project-as-submitted routes:
 
-  root 'sessions#index'
+  root 'tasks#index'
   get 'tasks' => 'tasks#index'
   get 'tasks/new' => 'tasks#new'
   post 'tasks' => 'tasks#create'
