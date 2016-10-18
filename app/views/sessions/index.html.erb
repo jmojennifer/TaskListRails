@@ -1,7 +1,7 @@
 <% if session[:user_id].nil? %>
-  <h1>Login:</h1>
-<h2><%= button_to("Login", "/auth/github", method: :get) %></h2>
+  <h1>Login</h1>
+<p><%= button_to("Login", "/auth/github", method: :get) %></p>
 <% else %>
-  <h1>Logout:</h1>
-  <h2><%= button_to("Logout", sessions_path, method: :delete) %></h2>
+  <h1>Logout</h1>
+  <p><%= button_to("Logout", sessions_path, method: :delete) %></p>
   <% end %>
