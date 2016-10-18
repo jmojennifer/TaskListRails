@@ -37,7 +37,6 @@ class TasksController < ApplicationController
   def complete
     @task = Task.find(params[:id])
     @task.mark_complete
-    @task.save
     redirect_to tasks_path
   end
 
@@ -46,7 +45,6 @@ class TasksController < ApplicationController
     @task.destroy
     redirect_to tasks_path
   end
-
 end
 
 private

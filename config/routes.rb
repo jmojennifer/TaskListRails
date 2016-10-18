@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+
+  # new route for OmniAuth
+
+  get "/auth/:provider/callback" =>  "sessions#create"
+
+  get "/sessions/login_failure", to: "sessions#login_failure", as: "login_failure"
+
+  get "/sessions", to: "sessions#index", as: "sessions"
+
+  delete "sessions", to: "sessions#destroy"
+
+  # I wouldn't have a root path anymore with resources, and my order isn't correct as-is. Many of my routes would not need adjustments, though ones relying on as: would need to be.
+
+  # My differences are mostly because I have more specific prefix call-outs built into my routes than Rails provides. I do have a special custom route for completing my task, which resources would not provide. (My ordering as-is also needs improvement, and Rails can help with that.)
+
+  # Project-as-submitted routes:
+
   root 'tasks#index'
   get 'tasks' => 'tasks#index'
   get 'tasks/new' => 'tasks#new'
@@ -8,6 +25,15 @@ Rails.application.routes.draw do
   patch 'tasks/:id/complete' => 'tasks#complete', as: 'task_complete'
   delete 'tasks/:id' => 'tasks#destroy'
   get 'tasks/:id', to: 'tasks#show', as: 'task'
+
+  # Refactor Attempt: Broke because I didn't have enough as: route name definitions to cover all needed routes
+
+  # root 'tasks#index'
+  # resources :routes, except: [:edit, :show]
+  # get 'tasks/:id/edit', to: 'tasks#edit', as: 'task_edit'
+  # patch 'tasks/:id/complete' => 'tasks#complete', as: 'task_complete'
+  # get 'tasks/:id', to: 'tasks#show', as: 'task'
+  # get 'tasks/:id', to: 'tasks#show', as: 'task'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
