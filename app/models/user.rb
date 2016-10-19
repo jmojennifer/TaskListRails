@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates :email, :uid, :provider, presence: true
+  validates :uid, :provider, presence: true
 
   def self.build_from_github(auth_hash)
     user       = User.new

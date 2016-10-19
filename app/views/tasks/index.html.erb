@@ -9,3 +9,7 @@
 <% end %>
 
 <h4>Add a task &nbsp<%=link_to("➕", tasks_new_path) %></h4>
+
+<% if session[:user_id] %>
+  <p><%= button_to("Logout", sessions_path, method: :delete) %></p>
+  <% end %>

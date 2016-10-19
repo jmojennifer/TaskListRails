@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  # new route for OmniAuth
+  # new route for authorization
+
+  root 'sessions#login'
+
+  # new routes for OmniAuth
 
   get "/auth/:provider/callback" =>  "sessions#create"
 
@@ -16,7 +20,6 @@ Rails.application.routes.draw do
 
   # Project-as-submitted routes:
 
-  root 'tasks#index'
   get 'tasks' => 'tasks#index'
   get 'tasks/new' => 'tasks#new'
   post 'tasks' => 'tasks#create'
