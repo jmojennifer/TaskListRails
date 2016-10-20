@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017220751) do
+ActiveRecord::Schema.define(version: 20161020051323) do
 
   create_table "tasks", force: :cascade do |t|
     t.string   "name",              null: false
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20161017220751) do
     t.datetime "completion_date"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.integer  "owner_uid"
+    t.integer  "owner_id"
   end
 
   create_table "users", force: :cascade do |t|

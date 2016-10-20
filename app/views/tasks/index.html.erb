@@ -1,11 +1,17 @@
-<h1>Task List</h1>
+<% if @user.name != nil %>
+  <h1>Task List: <%= @user.name %></h1>
+<% else %>
+  <h1>Your Task List</h1>
+<% end %>
 
 <h2>Tasks</h2>
 
-<% @tasks.each do |task| %>
+<% if !@tasks.nil? %>
+  <% @tasks.each do |task| %>
     <%=task[:name]%> &nbsp <%= link_to("Details", task_path(task[:id])) %> &nbsp <%= link_to("➖", task_path(task[:id]), method: :delete, data: { confirm: "Are you sure you want to destroy this task?"} ) %>
     <%= button_to("Complete Task", task_complete_path(task[:id]), method: :patch) %>
     <hr>
+  <% end %>
 <% end %>
 
 <h4>Add a task &nbsp<%=link_to("➕", tasks_new_path) %></h4>
