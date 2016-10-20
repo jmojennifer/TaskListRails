@@ -16,7 +16,4 @@ class UserTest < ActiveSupport::TestCase
     user = User.new(name: "Will Jones", email: "wjones@test.com")
     assert_not user.valid?
   end
-
-  #TODO: Add tests related to creating a user via auth_hash for def self.build_from_github(auth_hash)  
-
 end

@@ -6,5 +6,5 @@
 <h1>Welcome! Please log in!</h1><%= button_to("Login", "/auth/github", method: :get) %>
 <% else %>
   <h1>Logout</h1>
-  <p><%= button_to("Logout", sessions_path, method: :delete) %></p>
+  <p><%= button_to("Logout", root_path, method: :delete) %></p>
   <% end %>

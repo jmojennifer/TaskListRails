@@ -10,8 +10,6 @@ Rails.application.routes.draw do
 
   get "/sessions/login_failure", to: "sessions#login_failure", as: "login_failure"
 
-  get "/sessions", to: "sessions#index", as: "sessions"
-
   delete "sessions", to: "sessions#destroy"
 
   # I wouldn't have a root path anymore with resources, and my order isn't correct as-is. Many of my routes would not need adjustments, though ones relying on as: would need to be.
