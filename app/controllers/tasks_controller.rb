@@ -7,15 +7,7 @@ class TasksController < ApplicationController
     @tasks = Task.where(owner_id: session[:user_id])
   end
 
-  def show
-    # Code that needs work to be functional--cannot get to the 404 or show view with applicable test cases:
-    # @unsorted_task = Task.find(params[:id])
-    # if @unsorted_task.owner_id != session[:user_id]
-    #   render file: "#{Rails.root}/public/403.html", layout: false, status: 403
-    # else ActiveRecord::RecordNotFound
-    #   render file: "#{Rails.root}/public/404.html", layout: false, status: 404
-    # end
-  end
+  def show; end
 
   def new
     @task = Task.new
@@ -58,7 +50,11 @@ private
 
 def find_task
   @task = Task.find_by(id: params[:id], owner_id: session[:user_id])
+  if @task.nil?
+    render file: "#{Rails.root}/public/404.html", layout: false, status: 404
+  end
 end
+
 
 def task_params
   params.require(:task).permit(:name, :description, :completion_status, :completion_date)
