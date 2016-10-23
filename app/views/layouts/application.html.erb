@@ -10,9 +10,10 @@
   <header>
     <nav>
       <% if session[:user_id].nil? %>
-      <li><%= link_to("Sign In", "/auth/github", method: :get) %></li>
+      <h1>Task List</h1>
+      <li><%= button_to("Sign In", "/auth/github", method: :get) %></li>
       <% else %>
-        <li><%= link_to("Sign Out", sessions_path, method: :delete) %></li>
+        <li><%= button_to("Sign Out", sessions_path, method: :delete) %></li>
         <% end %>
       </nav>
     </header>
