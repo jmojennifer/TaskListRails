@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ nav hr, footer hr {
+   border-style: solid;
+   border-width: 3px;
+   color: black;
+ }
+
+li {
+  list-style: none;
+}
+
+main hr {
+  color: lightgray;
+  border-style: solid;
+}

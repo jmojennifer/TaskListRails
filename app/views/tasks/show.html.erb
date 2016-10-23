@@ -11,7 +11,7 @@
       <% end %>
   </ul>
 
-  <h4>Edit &nbsp <%= link_to("📝", task_edit_path(@task[:id])) %></h4>
+  <h4><%= link_to("📝", task_edit_path(@task[:id])) %> &nbsp Edit </h4>
 
-  <h4>Home &nbsp <%= link_to("🏠", tasks_path) %></h4>
+  <h4><%= link_to("🏠", tasks_path) %> &nbsp Home </h4>
 <% end %>

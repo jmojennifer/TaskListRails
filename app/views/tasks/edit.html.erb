@@ -13,3 +13,5 @@
 
   <p><%= f.submit "Submit" %></p>
 <% end %>
+<li><%= button_to("Back", task_path(@task[:id]), method: :get) %></li>
+<li><%= button_to("Home", tasks_path, method: :get) %></li>

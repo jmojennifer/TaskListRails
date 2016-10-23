@@ -10,15 +10,21 @@
   <header>
     <nav>
       <% if session[:user_id].nil? %>
-      <h1>Task List</h1>
-      <li><%= button_to("Sign In", "/auth/github", method: :get) %></li>
+        <li><%= button_to("Sign In via Github", "/auth/github", method: :get) %></li>
+        <h1>Task List</h1>
       <% else %>
         <li><%= button_to("Sign Out", sessions_path, method: :delete) %></li>
-        <% end %>
+        <h1>Task List: <%= @current_user.name %></h1>
+      <% end %>
+      <hr>
       </nav>
     </header>
-
+  </main>
 <%= yield %>
-
+</main>
+<footer>
+  <hr>
+  <p>&copy; Jennifer Owens <%= Time.now.year %></p>
+</footer>
 </body>
 </html>
