@@ -1,3 +1,5 @@
+<h2>Editing "<%= @task %>"</h2>
+
 <%= form_for @task, method: :patch do |f| %>
   <p><%= f.label :name %>
   <%= f.text_field :name %></p>
