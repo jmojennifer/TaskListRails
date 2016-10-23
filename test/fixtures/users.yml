@@ -10,6 +10,15 @@ lucy_lovestocode:
   email: lucy@loves.codes
   uid: 67890
   provider: github
-  # created_at: <%= Time.now %>
-  # updated_at: <%= Time.now %>
-  # id: 980190962
+
+carefree_colin:
+  name: Carefree Colin
+  email: colin@noworries.com
+  uid: 67891
+  provider: github
+
+no_task_stan:
+  name: Notask Stan
+  email: gotnuthin@todo.comments
+  uid: 67892
+  provider: github

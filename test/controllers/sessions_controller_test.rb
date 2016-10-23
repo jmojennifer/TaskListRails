@@ -10,6 +10,10 @@ class SessionsControllerTest < ActionController::TestCase
     get :destroy, {provider: "github"}
   end
 
+  test "(index) Can find a requsted user" do
+    login_a_user
+  end
+
   test "(create) Can Create a user" do
     assert_difference('User.count', 1) do
       login_a_user
@@ -50,4 +54,5 @@ class SessionsControllerTest < ActionController::TestCase
 
     assert new_login == previous_login
   end
+
 end

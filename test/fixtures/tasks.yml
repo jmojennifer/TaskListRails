@@ -5,6 +5,27 @@
 # below each fixture, per the syntax in the comments below
 #
 sample_task:
-  name: Super Important
+  user: lucy_lovestocode
+  name: Super Important Task
   completion_date: <%= Time.now %>
   completion_status: Complete
+
+sample_task2:
+  user: lucy_lovestocode
+  name: Writing tests
+  completion_status: Pending
+
+sample_task3:
+  user: lucy_lovestocode
+  name: Snacking n' coding
+  completion_status: Pending
+
+stay_on_couch:
+  user: carefree_colin
+  name: Stay On Couch All Day
+  completion_status: Pending
+
+sleep:
+  user: carefree_colin
+  name: Sleep
+  completion_status: Pending

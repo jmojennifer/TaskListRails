@@ -4,7 +4,7 @@ class TasksController < ApplicationController
 
   def index
     @user = User.find(session[:user_id])
-    @tasks = Task.where(owner_id: session[:user_id])
+    @tasks = Task.where(user_id: session[:user_id])
   end
 
   def show; end
@@ -15,7 +15,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.owner_id = session[:user_id]
+    @task.user_id = session[:user_id]
     if @task.save
       redirect_to tasks_path
     else
@@ -26,7 +26,7 @@ class TasksController < ApplicationController
   def edit; end
 
   def update
-    @task.owner_id = session[:user_id]
+    @task.user_id = session[:user_id]
     if @task.update(task_params)
       redirect_to tasks_path
     else
@@ -49,7 +49,7 @@ end
 private
 
 def find_task
-  @task = Task.find_by(id: params[:id], owner_id: session[:user_id])
+  @task = Task.find_by(id: params[:id], user_id: session[:user_id])
   if @task.nil?
     render file: "#{Rails.root}/public/404.html", layout: false, status: 404
   end
@@ -57,5 +57,5 @@ end
 
 
 def task_params
-  params.require(:task).permit(:name, :description, :completion_status, :completion_date)
+  params.require(:task).permit(:name, :description, :completion_status, :completion_date, :user_id)
 end
