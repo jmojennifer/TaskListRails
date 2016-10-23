@@ -77,6 +77,7 @@ class TasksControllerTest < ActionController::TestCase
     end
 
     get :new
+    assert_equal "Task Name and Completion Status are required fields", flash[:error]
     assert_response :success
   end
 
@@ -123,6 +124,7 @@ class TasksControllerTest < ActionController::TestCase
     task = assigns(:task)
     assert_response :success
     assert_template :edit
+    assert_equal "Task Name and Completion Status are required fields", flash[:error]
   end
 
   test "(destroy) Logged in user should be able to delete her task" do

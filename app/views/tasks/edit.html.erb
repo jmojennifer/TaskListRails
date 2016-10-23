@@ -1,5 +1,9 @@
 <h2>Editing "<%= @task.name %>"</h2>
 
+<% if flash[:error] %>
+  <p><%= flash[:error] %></p>
+<% end %>
+
 <%= form_for @task, method: :patch do |f| %>
   <p><%= f.label :name %>
   <%= f.text_field :name %></p>

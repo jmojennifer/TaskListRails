@@ -18,7 +18,9 @@ class TasksController < ApplicationController
     @task.user_id = session[:user_id]
     if @task.save
       redirect_to tasks_path
+      flash[:error] = nil
     else
+      flash[:error] = "Task Name and Completion Status are required fields"
       render :new
     end
   end
@@ -29,7 +31,9 @@ class TasksController < ApplicationController
     @task.user_id = session[:user_id]
     if @task.update(task_params)
       redirect_to tasks_path
+      flash[:error] = nil
     else
+      flash[:error] = "Task Name and Completion Status are required fields"
       render :edit
     end
   end

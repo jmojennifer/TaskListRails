@@ -1,5 +1,9 @@
 <h2>New Task</h2>
 
+<% if flash[:error] %>
+  <p><%= flash[:error] %></p>
+<% end %>
+
 <%= form_for @task do |f| %>
   <p><%= f.label :name %>
   <%= f.text_field :name %></p>
