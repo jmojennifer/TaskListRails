@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   # new route for authorization
 
-  root 'sessions#login'
+  root 'sessions#index'
 
   # new routes for OmniAuth
 

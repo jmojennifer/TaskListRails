@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: [:login, :create]
+  skip_before_action :require_login, only: [:index, :create]
 
   def create
     auth_hash = request.env['omniauth.auth']
@@ -24,7 +24,8 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-  def index
-    @user = User.find(session[:user_id]) # < recalls the value set in a previous request
-  end
+  # Once I matched my route and method to #index instead of #login, it broke the site. I found that the site worked the same without this method and I couldn't figure out how to test it, so commented it out.
+  # def index
+  #   @user = User.find(session[:user_id]) # < recalls the value set in a previous request
+  # end
 end
