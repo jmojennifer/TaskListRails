@@ -3,7 +3,6 @@ class TasksController < ApplicationController
   before_action :require_login
 
   def index
-    @user = User.find(session[:user_id])
     @tasks = Task.where(user_id: session[:user_id])
   end
 
@@ -54,7 +53,6 @@ def find_task
     render file: "#{Rails.root}/public/404.html", layout: false, status: 404
   end
 end
-
 
 def task_params
   params.require(:task).permit(:name, :description, :completion_status, :completion_date, :user_id)
