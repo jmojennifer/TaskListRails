@@ -14,7 +14,11 @@
         <h1>Task List</h1>
       <% else %>
         <li><%= button_to("Sign Out", sessions_path, method: :delete) %></li>
-        <h1>Task List: <%= @current_user.name %></h1>
+        <%= if !@current_user.nil? %>
+          <h1>Task List: <%= @current_user.name %></h1>
+        <%= else %>
+          <h1>Task List</h1>
+        <%= end %>
       <% end %>
       <hr>
       </nav>
