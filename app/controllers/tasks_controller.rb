@@ -3,6 +3,7 @@ class TasksController < ApplicationController
   before_action :require_login
 
   def index
+    @user = User.find(session[:user_id])
     @tasks = Task.where(user_id: session[:user_id])
   end
 
